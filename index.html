@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Discord Timestamp Generator</title>
+      <link rel="stylesheet" type="text/css" href="web.css" />
+      <script src="script.js"></script>
+   </head>
+   <body>
+      <div id="maincontent">
+         <h1>Discord Timestamp Generator</h1>
+         <form id="form">
+            <div id="padding1">
+               <label for="datepicker">Date:</label>
+            </div>
+            <input type="date" id="datepicker" required />
+            <div id="padding2">
+               <label for="timepicker">Time:</label>
+            </div>
+            <input type="time" id="timepicker" required />
+            <div id="shortform">
+               <input type="checkbox" id="shortformat" /> Short Format
+            </div>
+            <input type="submit" value="Get Time Code!" />
+         </form>
+         <div id="output">
+            <label for="output-label">Copy this:</label>
+            <input type="output-text" id="formattedTimestamp" readonly />
+            <span id="copyIcon" onclick="CopyToClipboard()">📋</span>
+         </div>
+      </div>
+      <section>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+         <span class="animation"></span>
+      </section>
+   </body>
+</html>
