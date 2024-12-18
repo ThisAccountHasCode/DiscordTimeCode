@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+:root {
+   --bg-color: #292a33; /* Background color */
+   --box-bg-color: #5a6f5b; /* Background colors for central box elements */
+   --border-color: #808080; /* Border for form elements */
+   --output-bg-color: #dfdfdf; /* Background colors for output box elements */
+   --text-color: #ebf1da; /* Unified text coloring */
+}
+
+body {
+   font-family: "Roboto", Arial, sans-serif;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   background-color: var(--bg-color);
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   color: var(--text-color);
+   overflow: hidden;
+}
+
+h1 {
+   align-items: center;
+   width: 100%;
+}
+
+#maincontent {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   margin-bottom: 20%;
+   max-width: 100%;
+}
+
+#form {
+   display: flex;
+   flex-direction: column;
+   background-color: var(--box-bg-color);
+   margin: 0.4rem;
+   padding: 1rem 1.4rem 1.4rem 1.4rem;
+   border-radius: 12px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+   max-width: 420px;
+   width: 100%;
+   font-size: 16px;
+   font-weight: bold;
+}
+
+#padding1 {
+   margin: 0rem 0rem 0.4rem 0rem;
+}
+
+#padding2 {
+   margin: 0.2rem 0rem 0.2rem 0rem;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="submit"] {
+   margin-top: 0.1rem;
+   padding: 5px;
+   font-size: 15px;
+   border: 1px solid var(--border-color);
+   border-radius: 5px;
+   text-align: center;
+   cursor: pointer;
+}
+#output-label {
+   text-align: center;
+   background-color: var(--output-bg-color);
+   border-radius: 5px;
+}
+input[type="output-text"] {
+   padding: 5px;
+   font-size: 15px;
+   border: 1px solid var(--border-color);
+   border-radius: 5px;
+}
+
+#shortform {
+   font-weight: normal;
+   font-size: 0.9rem;
+   height: 1rem;
+   margin: 0.3rem 0 0.3rem 0;
+}
+
+#output {
+   margin: 0.5rem;
+   padding: 1rem;
+   background-color: var(--box-bg-color);
+   border-radius: 10px;
+   max-width: 420px;
+   width: 100%;
+}
+
+#formattedTimestamp {
+   font-weight: bold;
+   font-size: 0.9rem;
+   text-align: center;
+   background-color: var(--output-bg-color);
+   border-radius: 5px;
+}
+
+#copyIcon {
+   font-size: 1rem;
+   cursor: pointer;
+}
+
+.time-picker {
+   position: relative;
+}
+
+.time-dropdown {
+   display: none;
+   position: absolute;
+   top: 100%;
+   left: 0;
+   background-color: #fff;
+   border: 1px solid #ccc;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.time-option {
+   cursor: pointer;
+}
+
+.time-option:hover {
+   background-color: #f0f0f0;
+}
+
+/* Adjust styling for smaller screens */
+@media screen and (max-width: 600px) {
+   form {
+      width: 90%;
+      max-width: 400px;
+   }
+
+   input[type="date"],
+   input[type="time"],
+   input[type="submit"],
+   input[type="text"] {
+      width: 100%;
+   }
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+section {
+   z-index: -100;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   background-size: cover;
+   animation: animateBg 60s linear infinite;
+}
+
+@keyframes animateBg {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(1.5);
+   }
+}
+
+.animation {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 3px;
+   height: 3px;
+   background: #f6fafaf1;
+   border-radius: 50%;
+   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+      0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.1);
+   animation: animate 4s linear infinite;
+}
+
+.animation::before {
+   content: "";
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 300px;
+   height: 1px;
+   background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animate {
+   0% {
+      transform: rotate(315deg) translateX(0);
+      opacity: 0.9;
+   }
+   70% {
+      opacity: 0.7;
+   }
+   100% {
+      transform: rotate(312deg) translateX(-1000px);
+      opacity: 0;
+   }
+}
+
+span:nth-child(1) {
+   top: 0;
+   right: 0%;
+   left: initial;
+   animation-delay: 1s;
+   animation-duration: 4.0s;
+}
+span:nth-child(2) {
+   top: 0;
+   right: 8%;
+   left: initial;
+   animation-delay: 5s;
+   animation-duration: 4.5s;
+}
+span:nth-child(3) {
+   top: 0;
+   right: 16%;
+   left: initial;
+   animation-delay: 3s;
+   animation-duration: 4.0s;
+}
+span:nth-child(4) {
+   top: 0;
+   right: 28%;
+   left: initial;
+   animation-delay: 5s;
+   animation-duration: 4.5s;
+}
+span:nth-child(5) {
+   top: 0;
+   right: 36%;
+   left: initial;
+   animation-delay: 8s;
+   animation-duration: 4.0s;
+}
+span:nth-child(6) {
+   top: 0;
+   right: 45%;
+   left: initial;
+   animation-delay: 1.5s;
+   animation-duration: 4.0s;
+}
+span:nth-child(7) {
+   top: 0;
+   right: 62%;
+   left: initial;
+   animation-delay: 2.2s;
+   animation-duration: 4.5s;
+}
+span:nth-child(8) {
+   top: 0;
+   right: 70%;
+   left: initial;
+   animation-delay: 2.4s;
+   animation-duration: 4.25s;
+}
+span:nth-child(9) {
+   top: 0;
+   right: 80%;
+   left: initial;
+   animation-delay: 3.75s;
+   animation-duration: 4.65s;
+}
+span:nth-child(10) {
+   top: 50%;
+   right: 0%;
+   left: initial;
+   animation-delay: 1.75s;
+   animation-duration: 4.95s;
+}
+span:nth-child(11) {
+   top: 20%;
+   right: 0%;
+   left: initial;
+   animation-delay: 2.75s;
+   animation-duration: 5.75s;
+}
