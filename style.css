@@ -21,8 +21,15 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   font-family: "Roboto", Arial, sans-serif;
+}
+
+body, input, select, textarea, button, label {
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+body {
   background-color: var(--bg-color);
   color: var(--text-color);
   text-align: center;
@@ -62,7 +69,6 @@ h1 {
   z-index: 1000;
   font-weight: bold;
   user-select: none;
-  font-family: "Roboto", Arial, sans-serif;
   background-color: var(--box-bg-color);
   padding: 6px 12px;
   border-radius: 8px;
